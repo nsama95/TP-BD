@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+  <!-- As a heading -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">TP Ticketera- Base de datos II</span>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <h4>Tickets con desperfectos:</h4>
+  <div class="d-grid gap-2">
+    <button class="btn btn-success" type="button" (click)="getTicketsDesperfectos()" >Tickets con desperfectos</button>
+    <button class="btn btn-success" type="button">Cantidad de tickets resueltos por desperfecto</button>
+    <button class="btn btn-success" type="button">cada cuantos dias hay desperfectos</button>
+  </div>
+</div>
+<div class="container">
+  {{ticketsDesperfectos}}
+</div>
+  <div class="container">
+    <h4>Zonas:</h4>
+    <div class="d-grid gap-2">
+      <button class="btn btn-success" type="button">Motivos y localidad donde ocurren</button>
+      <button class="btn btn-success" type="button">Cantidad resueltos</button>
+      <button class="btn btn-success" type="button">Cada cuantas horas ocurren</button>
+    </div>
+  </div>
+    <div class="container">
+      <h4>Tickets por Alta del servicio:</h4>
+      <div class="d-grid gap-2">
+        <button class="btn btn-success" type="button">Motivos y localidad donde ocurren</button>
+        <button class="btn btn-success" type="button">Cantidad resueltos</button>
+        <button class="btn btn-success" type="button">Cada cuantas horas ocurren</button>
+      </div>
+    </div>
+      <div class="container">
+        <h4>Atencion al cliente:</h4>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="button">Empleado atiende más tickets</button>
+          <button class="btn btn-success" type="button">Empleado con más tickets sin resolver</button>
+        </div>
+      </div>
+      <div class="container">
+        <h4>Atencion por zona:</h4>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="button">Desperfectos por zonas</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <h4>Clientes:</h4>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="button">Cliente con más tickets</button>
+          <button class="btn btn-success" type="button">Clientes con tickets sin resolver</button>
+        </div>
+      </div>
+
+
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-info">
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+      </tr>
+      <tr class="table-light">
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+      </tr>
+      <tr class="table-info">
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+      </tr>
+      <tr class="table-light">
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+      </tr>
+
+  
+    </tbody>
+  </table>
+
+</body>
+</html>
