@@ -20,7 +20,7 @@ export class AppComponent {
   ticketsZonales: any;
   ticketsClientes: any;
   getTicketsDesperfectos() {
-    return this.http.get(this.usedUrl.concat("/tickets-desperfectos"))
+    return this.http.get(this.usedUrl.concat("tickets-desperfectos"))
       .subscribe((data: any) => {
         console.log(data);
         this.ticketsDesperfectos = JSON.stringify(data)
