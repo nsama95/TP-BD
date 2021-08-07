@@ -62,7 +62,7 @@ export class AppComponent {
   }
 
   getTicketsDesperfectosZona(){
-    return this.http.get(this.userUrl.concat("zona-desperfectas"))
+    return this.http.get(this.userUrl.concat("zona-desperfectos"))
     .subscribe((data: any) => {
       this.zona=JSON.stringify(data);
 
