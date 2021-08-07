@@ -19,85 +19,105 @@
   <h4>Tickets con desperfectos:</h4>
   <div class="d-grid gap-2">
     <button class="btn btn-success" type="button" (click)="getTicketsDesperfectos()" >Tickets con desperfectos</button>
-    <button class="btn btn-success" type="button">Cantidad de tickets resueltos por desperfecto</button>
-    <button class="btn btn-success" type="button">cada cuantos dias hay desperfectos</button>
+    <button class="btn btn-success" type="button" (click)="getTicketsDesperfectosResueltos()">Tickets resueltos por desperfectos</button>
+    <button class="btn btn-success" type="button" (click)="getTicketsDesperfectosCadaCuanto()">Cada cuantos dias hay desperfectos</button>
   </div>
 </div>
-<div class="container">
-  {{ticketsDesperfectos}}
-</div>
+<br>
+<table class="table" *ngIf="desperfecto !== '' && ticketsDesperfectos !== ['']">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Resultado de la consulta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info">
+      <th scope="row">#</th>
+    
+      <td>{{this.desperfecto}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+
   <div class="container">
     <h4>Zonas:</h4>
     <div class="d-grid gap-2">
-      <button class="btn btn-success" type="button">Motivos y localidad donde ocurren</button>
-      <button class="btn btn-success" type="button">Cantidad resueltos</button>
-      <button class="btn btn-success" type="button">Cada cuantas horas ocurren</button>
+      <button class="btn btn-success" type="button" (click)="getTicketsDesperfectosZona()">Localidad donde ocurren y motivos desperfectos</button>
+      <button class="btn btn-success" type="button" (click)="getTicketsZonaCentros()">Localidad del centro más concurrido</button>
+      <button class="btn btn-success" type="button" (click)="getTicketsZonaClientes()">Localidad con más clientes</button>
     </div>
   </div>
+  <br>
+  <table class="table" *ngIf="zona !== '' && ticketsZona !== []">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Resultado de la consulta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info">
+      <th scope="row">#</th>
+    
+      <td>{{this.zona}}</td>
+    </tr>
+   
+  </tbody>
+  </table>
+
     <div class="container">
-      <h4>Tickets por Alta del servicio:</h4>
+      <h4>Empleados:</h4>
       <div class="d-grid gap-2">
-        <button class="btn btn-success" type="button">Motivos y localidad donde ocurren</button>
-        <button class="btn btn-success" type="button">Cantidad resueltos</button>
-        <button class="btn btn-success" type="button">Cada cuantas horas ocurren</button>
+        <button class="btn btn-success" type="button" (click)="getTicketsEmpleado()">Empleado con mayor tickes asignados</button>
+        <button class="btn btn-success" type="button" (click)="getTicketsSinResolverEmpleado()">Empleado con mayor tickets sin resolver</button>
+        <button class="btn btn-success" type="button" (click)="getTicketsDeEmpleado()">Empleado con tickets</button>
       </div>
     </div>
-      <div class="container">
-        <h4>Atencion al cliente:</h4>
-        <div class="d-grid gap-2">
-          <button class="btn btn-success" type="button">Empleado atiende más tickets</button>
-          <button class="btn btn-success" type="button">Empleado con más tickets sin resolver</button>
-        </div>
-      </div>
-      <div class="container">
-        <h4>Atencion por zona:</h4>
-        <div class="d-grid gap-2">
-          <button class="btn btn-success" type="button">Desperfectos por zonas</button>
-        </div>
-      </div>
-
-      <div class="container">
-        <h4>Clientes:</h4>
-        <div class="d-grid gap-2">
-          <button class="btn btn-success" type="button">Cliente con más tickets</button>
-          <button class="btn btn-success" type="button">Clientes con tickets sin resolver</button>
-        </div>
-      </div>
-
-
-  <table class="table" >
+    <br>
+    <table class="table" *ngIf="empleado !== '' && ticketsEmpleados !== []">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col">Resultado de la consulta</th>
       </tr>
     </thead>
     <tbody>
       <tr class="table-info">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
+        <th scope="row">#</th>
+      
+        <td>{{this.empleado}}</td>
       </tr>
-      <tr class="table-light">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-      <tr class="table-info">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr class="table-light">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-
-  
+     
     </tbody>
-  </table>
+    </table>
+
+      <div class="container">
+        <h4>Clientes:</h4>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="button" (click)="getTicketsCliente()">Cliente con más tickets</button>
+          <button class="btn btn-success" type="button" (click)="getTicketsClienteCentro()">Cliente ubicados a menos de 200km de un centros </button>
+        </div>
+      </div>
+
+      <table class="table" *ngIf="cliente !== '' && ticketsEmpleados !== []">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Resultado de la consulta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-info">
+            <th scope="row">#</th>
+          
+            <td>{{this.cliente}}</td>
+          </tr>
+         
+        </tbody>
+        </table>
+  
 
 </body>
 </html>
