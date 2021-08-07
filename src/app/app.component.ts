@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  usedUrl = "";
+  userUrl = "";
   title = 'tp';
   urlServer = "https://tp-ticketera-samaniego.herokuapp.com/";
   ticketsDesperfectos:any=[] ;
@@ -20,11 +20,11 @@ export class AppComponent {
   empleado='';
   cliente='';
   constructor(private http: HttpClient) {
-    this.usedUrl=this.urlServer;
+    this.userUrl=this.urlServer;
   }
 
   getTicketsDesperfectos() {
-    return this.http.get(this.usedUrl.concat("tickets-desperfectos"))
+    return this.http.get(this.userUrl.concat("tickets-desperfectos"))
       .subscribe((data: any) => {
         this.desperfecto=JSON.stringify(data);
         data.forEach((element: any) => {
@@ -37,7 +37,7 @@ export class AppComponent {
   }
 
   getTicketsDesperfectosResueltos(){
-    return this.http.get(this.usedUrl.concat("tickets-desperfectos-cantidad"))
+    return this.http.get(this.userUrl.concat("tickets-desperfectos-cantidad"))
     .subscribe((data: any) => {
       this.desperfecto=JSON.stringify(data);
       data.forEach((element: any) => {
@@ -51,7 +51,7 @@ export class AppComponent {
 
 
   getTicketsDesperfectosCadaCuanto(){
-    return this.http.get(this.usedUrl.concat("tickets-desperfectos-cada-cuanto"))
+    return this.http.get(this.userUrl.concat("tickets-desperfectos-cada-cuanto"))
     .subscribe((data: any) => {
       this.desperfecto=JSON.stringify(data);
       this.ticketsDesperfectos=JSON.stringify(data);
@@ -62,7 +62,7 @@ export class AppComponent {
   }
 
   getTicketsDesperfectosZona(){
-    return this.http.get(this.usedUrl.concat("zona-desperfectas"))
+    return this.http.get(this.userUrl.concat("zona-desperfectas"))
     .subscribe((data: any) => {
       this.zona=JSON.stringify(data);
 
@@ -75,7 +75,7 @@ export class AppComponent {
   }
 
   getTicketsZonaCentros(){
-    return this.http.get(this.usedUrl.concat("zona-centros"))
+    return this.http.get(this.userUrl.concat("zona-centros"))
     .subscribe((data: any) => {
       this.zona=JSON.stringify(data);
       this.desperfecto='';
@@ -87,7 +87,7 @@ export class AppComponent {
     })
   }
   getTicketsZonaClientes(){
-    return this.http.get(this.usedUrl.concat("zona-clientes"))
+    return this.http.get(this.userUrl.concat("zona-clientes"))
     .subscribe((data: any) => {
       this.zona=JSON.stringify(data);
       this.desperfecto='';
@@ -99,7 +99,7 @@ export class AppComponent {
   }
 
   getTicketsEmpleado(){
-    return this.http.get(this.usedUrl.concat("empleado-mayor-tickets"))
+    return this.http.get(this.userUrl.concat("empleado-mayor-tickets"))
     .subscribe((data: any) => {
       this.empleado=JSON.stringify(data);
       this.desperfecto='';
@@ -112,7 +112,7 @@ export class AppComponent {
   }
 
   getTicketsSinResolverEmpleado(){
-    return this.http.get(this.usedUrl.concat("empleado-mayor-tickets-sin-resolver"))
+    return this.http.get(this.userUrl.concat("empleado-mayor-tickets-sin-resolver"))
     .subscribe((data: any) => {
       this.empleado=JSON.stringify(data);
       this.desperfecto='';
@@ -125,7 +125,7 @@ export class AppComponent {
   }
 
   getTicketsDeEmpleado(){
-    return this.http.get(this.usedUrl.concat("empleado-con-tickets"))
+    return this.http.get(this.userUrl.concat("empleado-con-tickets"))
     .subscribe((data: any) => {
       this.empleado=JSON.stringify(data);
       this.desperfecto='';
@@ -139,7 +139,7 @@ export class AppComponent {
   }
 
   getTicketsCliente(){
-    return this.http.get(this.usedUrl.concat("cliente-con-mayor-tickets"))
+    return this.http.get(this.userUrl.concat("cliente-con-mayor-tickets"))
     .subscribe((data: any) => {
       this.cliente=JSON.stringify(data);
       this.desperfecto='';
@@ -151,7 +151,7 @@ export class AppComponent {
   }
 
   getTicketsClienteCentro(){
-    return this.http.get(this.usedUrl.concat("centros-clientes"))
+    return this.http.get(this.userUrl.concat("centros-clientes"))
     .subscribe((data: any) => {
       this.cliente=JSON.stringify(data);
       this.desperfecto='';
