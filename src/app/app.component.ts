@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   userUrl = "";
   title = 'tp';
+  //urlServer ="http://localhost:8080/"
   urlServer = "https://tp-ticketera-samaniego.herokuapp.com/";
   ticketsDesperfectos:any=[] ;
   ticketsEmpleados: any=[];
@@ -152,6 +153,28 @@ export class AppComponent {
 
   getTicketsClienteCentro(){
     return this.http.get(this.userUrl.concat("centros-clientes"))
+    .subscribe((data: any) => {
+      this.cliente=JSON.stringify(data);
+      this.desperfecto='';
+      this.zona='';
+      this.empleado='';
+      this.ticketsClientes = JSON.stringify(data);
+
+    })
+  }
+  getClienteCentroLomasDeZamora(){
+    return this.http.get(this.userUrl.concat("clientes-lomas"))
+    .subscribe((data: any) => {
+      this.cliente=JSON.stringify(data);
+      this.desperfecto='';
+      this.zona='';
+      this.empleado='';
+      this.ticketsClientes = JSON.stringify(data);
+
+    })
+  }
+  getTicketsCanales(){
+    return this.http.get(this.userUrl.concat("cliente-plan"))
     .subscribe((data: any) => {
       this.cliente=JSON.stringify(data);
       this.desperfecto='';
